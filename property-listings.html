@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Property Listings | Great Lansba Realtors</title>
+
+    <meta name="description" content="Discover properties available for sale and rent with Great Lansba Realtors in Kenya.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PROPERTY LISTINGS HERO SECTION -->
+    <section class="listings-hero">
+
+        <div class="listings-hero-overlay"></div>
+
+        <div class="listings-hero-content">
+
+            <span class="listings-hero-label">
+                GREAT LANSBA REALTORS
+            </span>
+
+            <h1>Find Your Perfect Property</h1>
+
+            <p>
+                Discover exceptional properties for sale and rent.
+                Let us help you find a place to call home or the
+                right space for your business.
+            </p>
+
+            <a href="#available-properties" class="listings-hero-btn">
+                Explore Properties &rarr;
+            </a>
+
+        </div>
+    </section>
+<!-- PROPERTY SEARCH SECTION -->
+<section class="property-search-section">
+
+    <div class="property-search-heading">
+        <span>YOUR NEXT PROPERTY STARTS HERE</span>
+
+        <h2>Find a Property That Fits Your Needs</h2>
+
+        <p>
+            Search for properties by purpose, property type
+            and your preferred location.
+        </p>
+    </div>
+
+    <form class="property-search-form" id="propertySearchForm">
+
+        <div class="search-field">
+            <label for="propertyPurpose">Looking For</label>
+
+            <select id="propertyPurpose" name="purpose">
+                <option value="all">Buy or Rent</option>
+                <option value="sale">Property for Sale</option>
+                <option value="rent">Property for Rent</option>
+            </select>
+        </div>
+
+        <div class="search-field">
+            <label for="propertyType">Property Type</label>
+
+            <select id="propertyType" name="type">
+                <option value="all">All Property Types</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+                <option value="land">Land</option>
+                <option value="industrial">Industrial</option>
+            </select>
+        </div>
+
+        <div class="search-field">
+            <label for="propertyLocation">Location</label>
+
+            <select id="propertyLocation" name="location">
+                <option value="all">All Locations</option>
+                <option value="nairobi">Nairobi</option>
+                <option value="kiambu">Kiambu</option>
+                <option value="mombasa">Mombasa</option>
+                <option value="other">Other Locations</option>
+            </select>
+        </div>
+
+        <button type="submit" class="property-search-btn">
+            Search Properties
+        </button>
+
+    </form>
+
+</section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
