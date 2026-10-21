@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Great Lansba Realtors</title>
+
+    <meta name="description"
+          content="Contact Great Lansba Realtors for property sales, rentals, property management and real estate consultations in Kenya.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contacts.css">
+</head>
+
+<body>
+
+    <!-- HEADER: MATCH THE EXISTING WEBSITE -->
+    <header class="site-header">
+        <div class="container header-container">
+
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.jpg"
+                     alt="Great Lansba Realtors Logo"
+                     class="logo">
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-navigation" id="main-navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="property-listings.html">Property Listing</a></li>
+                    <li><a href="property-category.html">Property Category</a></li>
+                    <li><a href="property-management.html">Property Management</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- CONTACT HERO -->
+        <section class="contact-hero">
+            <div class="contact-hero-overlay">
+                <div class="contact-hero-content">
+                    <span class="contact-eyebrow">GREAT LANSBA REALTORS</span>
+
+                    <h1>Let's Talk Property</h1>
+
+                    <p>
+                        Have a property question or need professional
+                        real estate assistance? We are ready to help.
+                    </p>
+
+                    <div class="contact-hero-buttons">
+                        <a href="#contact-form"
+                           class="contact-btn contact-btn-gold">
+                            Send an Enquiry
+                        </a>
+
+                        <a href="#book-appointment"
+                           class="contact-btn contact-btn-outline">
+                            Book an Appointment
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT INTRODUCTION -->
+        <section class="contact-intro section-padding">
+            <span class="section-eyebrow">GET IN TOUCH</span>
+
+            <h2>We Would Love to Hear From You</h2>
+
+            <p>
+                Whether you are looking to rent, buy, sell, or manage
+                property, contact our team for assistance.
+            </p>
+        </section>
+
+        <!-- CONTACT DETAILS -->
+        <section class="contact-details section-padding">
+
+            <div class="contact-detail-card">
+                <div class="contact-icon">☎</div>
+
+                <h3>Call Us</h3>
+
+                <p>Speak to our team about your property needs.</p>
+
+                <a href="tel:+254708326799">0708 326 799</a>
+                <a href="tel:+254757462419">0757 462 419</a>
+            </div>
+
+            <div class="contact-detail-card">
+                <div class="contact-icon">✉</div>
+
+                <h3>Email Us</h3>
+
+                <p>Send us your questions and enquiries.</p>
+
+                <a href="mailto:info@greatlansba.ke">
+                    info@greatlansba.ke
+                </a>
+
+                <a href="mailto:sales@greatlansba.ke">
+                    sales@greatlansba.ke
+                </a>
+            </div>
+
+            <div class="contact-detail-card">
+                <div class="contact-icon">⌖</div>
+
+                <h3>Visit Our Office</h3>
+
+                <p>Muthaiga Business Centre, Nairobi, Kenya.</p>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=Muthaiga+Business+Centre+Nairobi"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Get Directions
+                </a>
+            </div>
+
+        </section>
+
+        <!-- CONTACT FORM AND APPOINTMENT -->
+        <section class="contact-main section-padding">
+
+            <div class="contact-form-container" id="contact-form">
+
+                <span class="section-eyebrow">SEND AN ENQUIRY</span>
+
+                <h2>How Can We Help You?</h2>
+
+                <p>
+                    Fill in the form below and tell us what you need.
+                </p>
+
+                <form action="mailto:info@greatlansba.ke"
+                      method="post"
+                      enctype="text/plain">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+
+                            <input type="text"
+                                   id="full-name"
+                                   name="Full Name"
+                                   placeholder="Enter your full name"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+
+                            <input type="tel"
+                                   id="phone"
+                                   name="Phone Number"
+                                   placeholder="Enter your phone number"
+                                   required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+
+                        <input type="email"
+                               id="email"
+                               name="Email"
+                               placeholder="Enter your email address"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Required</label>
+
+                        <select id="service"
+                                name="Service Required"
+                                required>
+                            <option value="">Select a service</option>
+                            <option>Property Sales</option>
+                            <option>Property Rental</option>
+                            <option>Property Management</option>
+                            <option>Property Valuation</option>
+                            <option>Real Estate Consultancy</option>
+                            <option>Land Transactions</option>
+                            <option>Other Enquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+
+                        <textarea id="message"
+                                  name="Message"
+                                  rows="5"
+                                  placeholder="Tell us how we can assist you"
+                                  required></textarea>
+                    </div>
+
+                    <button type="submit"
+                            class="contact-btn contact-btn-green">
+                        Send Enquiry →
+                    </button>
+
+                </form>
+
+                <p class="form-note">
+                    This temporary form uses your device's email
+                    application. An online submission service can
+                    be connected later.
+                </p>
+
+            </div>
+
+            <!-- BOOK AN APPOINTMENT -->
+            <aside class="appointment-card" id="book-appointment">
+
+                <span class="section-eyebrow">LET'S MEET</span>
+
+                <h2>Book an Appointment</h2>
+
+                <p>
+                    Arrange a consultation with Great Lansba Realtors
+                    to discuss your property goals and the services
+                    that best meet your needs.
+                </p>
+
+                <ul>
+                    <li>Property buying and selling consultations</li>
+                    <li>Rental and property management discussions</li>
+                    <li>Real estate investment enquiries</li>
+                </ul>
+
+                <a href="tel:+254708326799"
+                   class="contact-btn contact-btn-gold">
+                    Call to Arrange a Meeting
+                </a>
+
+                <p class="appointment-note">
+                    Online date and time booking will be connected
+                    when the appointment system is ready.
+                </p>
+
+            </aside>
+
+        </section>
+
+        <!-- WHATSAPP -->
+        <section class="contact-whatsapp">
+
+            <div>
+                <span class="section-eyebrow">NEED A QUICK RESPONSE?</span>
+
+                <h2>Chat With Our Team</h2>
+
+                <p>
+                    Contact us on WhatsApp for your property enquiries.
+                </p>
+            </div>
+
+            <a href="https://wa.me/254708326799"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-btn contact-btn-whatsapp">
+                Chat on WhatsApp
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="contact-footer">
+
+        <div class="contact-footer-inner">
+
+            <div>
+                <h3>Great Lansba Realtors</h3>
+
+                <p>
+                    Your trusted partner in real estate services
+                    and property management.
+                </p>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+
+                <p>Muthaiga Business Centre, Nairobi</p>
+                <p>0708 326 799 | 0757 462 419</p>
+                <p>info@greatlansba.ke</p>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="property-listings.html">Property Listings</a>
+                <a href="services.html">Our Services</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="contact-footer-bottom">
+            <p>
+                &copy; <span id="current-year">2026</span>
+                Great Lansba Realtors. All rights reserved.
+            </p>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById("current-year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>

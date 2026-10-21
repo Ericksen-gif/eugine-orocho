@@ -1,0 +1,1182 @@
+
+/* =========================================
+   GREAT LANSBA REALTORS
+   PROPERTY MANAGEMENT PAGE
+   ========================================= */
+
+:root {
+    --management-green: #013515;
+    --management-dark-green: #023216;
+    --management-gold: #E0A63F;
+    --management-light-gold: #F4C561;
+    --management-champagne: #FBDD84;
+    --management-white: #FFFFFF;
+    --management-light: #F5F7F4;
+    --management-text: #424A43;
+    --management-muted: #697269;
+    --management-border: #E3E9E2;
+    --management-shadow: 0 12px 35px rgba(1, 53, 21, 0.09);
+}
+
+/* RESET */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--management-text);
+    background: var(--management-white);
+    line-height: 1.7;
+}
+
+body img {
+    max-width: 100%;
+    display: block;
+}
+
+.management-container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+.management-page a {
+    text-decoration: none;
+}
+
+.management-page button,
+.management-page a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.section-padding {
+    padding: 90px 0;
+}
+
+/* =========================================
+   TOP CONTACT BAR
+   ========================================= */
+
+.management-topbar {
+    background: var(--management-dark-green);
+    color: var(--management-white);
+    font-size: 12px;
+    letter-spacing: 0.3px;
+}
+
+.management-topbar-inner {
+    min-height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.management-topbar a {
+    color: var(--management-champagne);
+    font-weight: 700;
+}
+
+/* =========================================
+   HEADER AND NAVIGATION
+   ========================================= */
+
+.management-header {
+    position: relative;
+    z-index: 1000;
+    background: var(--management-green);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.management-header-inner {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.management-brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.management-brand img {
+    width: 155px;
+    height: 67px;
+    object-fit: contain;
+    background: var(--management-white);
+    border-radius: 4px;
+}
+
+.management-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.management-navigation a {
+    position: relative;
+    color: var(--management-white);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 12px 0;
+    transition: color 0.25s ease;
+}
+
+.management-navigation a:hover,
+.management-navigation a.active {
+    color: var(--management-champagne);
+}
+
+.management-navigation a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--management-gold);
+}
+
+.management-menu-toggle {
+    display: none;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 5px;
+    padding: 7px 12px;
+    background: transparent;
+    color: var(--management-white);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* =========================================
+   WIDE HERO BANNER
+   ========================================= */
+
+.management-hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(1, 28, 12, 0.90) 0%,
+            rgba(1, 40, 17, 0.76) 43%,
+            rgba(1, 40, 17, 0.23) 100%
+        ),
+        url("images/management.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.management-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 7px;
+    background: linear-gradient(
+        90deg,
+        var(--management-gold),
+        var(--management-champagne),
+        var(--management-gold)
+    );
+}
+
+.management-hero-content {
+    max-width: 720px;
+    padding: 85px 0 100px;
+    color: var(--management-white);
+}
+
+.management-eyebrow {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--management-champagne);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.management-hero h1 {
+    margin: 0 0 23px;
+    max-width: 700px;
+    font-size: clamp(38px, 5.1vw, 66px);
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -1.8px;
+}
+
+.management-hero h1 span {
+    display: block;
+    color: var(--management-champagne);
+}
+
+.management-hero-content > p {
+    max-width: 590px;
+    margin: 0 0 30px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.management-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+}
+
+/* BUTTONS */
+
+.management-btn {
+    min-height: 49px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 23px;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 800;
+    text-align: center;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.management-btn:hover {
+    transform: translateY(-2px);
+}
+
+.management-btn-gold {
+    background: var(--management-gold);
+    border-color: var(--management-gold);
+    color: var(--management-green);
+}
+
+.management-btn-gold:hover {
+    background: var(--management-champagne);
+    border-color: var(--management-champagne);
+}
+
+.management-btn-outline {
+    color: var(--management-white);
+    border-color: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.management-btn-outline:hover {
+    color: var(--management-green);
+    background: var(--management-white);
+    border-color: var(--management-white);
+}
+
+/* =========================================
+   INTRODUCTION
+   ========================================= */
+
+.management-intro {
+    background: var(--management-white);
+}
+
+.management-intro-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.8fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.management-section-label {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #947020;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.management-intro h2,
+.management-value h2 {
+    margin: 0 0 22px;
+    color: var(--management-green);
+    font-size: clamp(30px, 3.6vw, 43px);
+    line-height: 1.22;
+    letter-spacing: -0.8px;
+}
+
+.management-intro h2 span,
+.management-value h2 span {
+    color: #9B7628;
+}
+
+.management-intro-text > p,
+.management-value-content > p {
+    margin: 0 0 18px;
+    color: var(--management-muted);
+    font-size: 14px;
+}
+
+.management-text-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--management-green);
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.management-text-link:hover {
+    color: #9B7628;
+}
+
+.management-highlight {
+    position: relative;
+    padding: 42px 35px 36px;
+    background: var(--management-light);
+    border-left: 4px solid var(--management-gold);
+}
+
+.management-highlight-number {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--management-gold);
+    font-size: 43px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.management-highlight h3 {
+    margin: 0 0 13px;
+    color: var(--management-green);
+    font-size: 22px;
+}
+
+.management-highlight p {
+    margin: 0;
+    color: var(--management-muted);
+    font-size: 13px;
+}
+
+/* =========================================
+   SECTION HEADINGS
+   ========================================= */
+
+.management-section-heading {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.management-section-heading h2 {
+    margin: 0 0 15px;
+    color: var(--management-green);
+    font-size: clamp(29px, 3.5vw, 41px);
+    line-height: 1.25;
+    letter-spacing: -0.8px;
+}
+
+.management-section-heading > p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--management-muted);
+    font-size: 14px;
+}
+
+/* =========================================
+   SERVICES SECTION
+   ========================================= */
+
+.management-services {
+    background: var(--management-light);
+}
+
+.management-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.management-service-card {
+    position: relative;
+    padding: 33px 27px 30px;
+    background: var(--management-white);
+    border: 1px solid var(--management-border);
+    border-bottom: 3px solid transparent;
+    box-shadow: 0 5px 20px rgba(1, 53, 21, 0.025);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.management-service-card:hover {
+    transform: translateY(-7px);
+    border-bottom-color: var(--management-gold);
+    box-shadow: var(--management-shadow);
+}
+
+.management-service-icon {
+    width: 51px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 23px;
+    background: var(--management-green);
+    color: var(--management-champagne);
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 3px;
+}
+
+.management-service-card h3 {
+    margin: 0 0 13px;
+    color: var(--management-green);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.management-service-card p {
+    margin: 0;
+    color: var(--management-muted);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+/* =========================================
+   MANAGEMENT PROCESS
+   ========================================= */
+
+.management-process {
+    background: var(--management-white);
+}
+
+.management-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.management-process-step {
+    position: relative;
+    padding: 28px 23px;
+    border-top: 2px solid var(--management-gold);
+    background: #FAFBF9;
+}
+
+.management-process-step > span {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #A37A26;
+    font-size: 31px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.management-process-step h3 {
+    margin: 0 0 12px;
+    color: var(--management-green);
+    font-size: 19px;
+}
+
+.management-process-step p {
+    margin: 0;
+    color: var(--management-muted);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+/* =========================================
+   VALUE PROPOSITION
+   ========================================= */
+
+.management-value {
+    background: #F2F5F0;
+}
+
+.management-value-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.management-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 26px 0 0;
+}
+
+.management-benefits li {
+    position: relative;
+    margin-bottom: 13px;
+    padding-left: 31px;
+    color: var(--management-text);
+    font-size: 13px;
+}
+
+.management-benefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 21px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--management-green);
+    border-radius: 50%;
+    color: var(--management-champagne);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.management-value-panel {
+    padding: 43px 36px;
+    background: var(--management-green);
+    border-top: 5px solid var(--management-gold);
+    box-shadow: var(--management-shadow);
+}
+
+.management-value-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(251, 221, 132, 0.8);
+    border-radius: 50%;
+    color: var(--management-champagne);
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.management-value-panel h3 {
+    margin: 0 0 15px;
+    color: var(--management-white);
+    font-size: 25px;
+    line-height: 1.35;
+}
+
+.management-value-panel p {
+    margin: 0 0 25px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* =========================================
+   FINAL CALL TO ACTION
+   ========================================= */
+
+.management-cta {
+    position: relative;
+    overflow: hidden;
+    padding: 66px 0;
+    background: var(--management-dark-green);
+}
+
+.management-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 100%;
+    background: var(--management-gold);
+}
+
+.management-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.management-cta .management-section-label {
+    color: var(--management-champagne);
+}
+
+.management-cta h2 {
+    max-width: 700px;
+    margin: 0 0 13px;
+    color: var(--management-white);
+    font-size: clamp(28px, 3.4vw, 39px);
+    line-height: 1.25;
+}
+
+.management-cta p {
+    max-width: 670px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 14px;
+}
+
+.management-cta-inner > .management-btn {
+    flex-shrink: 0;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.management-footer {
+    background: #011F0D;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.management-footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 1fr;
+    gap: 65px;
+    padding: 65px 0 45px;
+}
+
+.management-footer-logo {
+    width: 165px;
+    max-height: 75px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    background: var(--management-white);
+    border-radius: 3px;
+}
+
+.management-footer-about p,
+.management-footer-grid > div > p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.management-footer-grid h3 {
+    margin: 0 0 22px;
+    color: var(--management-champagne);
+    font-size: 16px;
+}
+
+.management-footer-grid > div:not(:first-child) > a {
+    display: block;
+    width: fit-content;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease;
+}
+
+.management-footer-grid > div:not(:first-child) > a:hover {
+    color: var(--management-champagne);
+}
+
+.management-footer-grid > div > p {
+    margin-top: 10px;
+}
+
+.management-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.management-footer-bottom p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 11px;
+}
+
+/* =========================================
+   TABLETS AND SMALL LAPTOPS
+   ========================================= */
+
+@media (max-width: 1050px) {
+
+    .management-header-inner {
+        gap: 18px;
+    }
+
+    .management-brand img {
+        width: 125px;
+        height: 62px;
+    }
+
+    .management-navigation {
+        gap: 13px;
+    }
+
+    .management-navigation a {
+        font-size: 11px;
+    }
+
+    .management-intro-grid,
+    .management-value-grid {
+        gap: 40px;
+    }
+
+    .management-services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .management-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .management-footer-grid {
+        gap: 35px;
+    }
+}
+
+/* =========================================
+   MOBILE NAVIGATION
+   ========================================= */
+
+@media (max-width: 760px) {
+
+    .section-padding {
+        padding: 62px 0;
+    }
+
+    .management-topbar-inner {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 9px 0;
+        gap: 5px 15px;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .management-header-inner {
+        min-height: 76px;
+        position: relative;
+    }
+
+    .management-brand img {
+        width: 125px;
+        height: 59px;
+    }
+
+    .management-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .management-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: -4.35%;
+        right: -4.35%;
+        padding: 13px 4.35% 22px;
+        background: var(--management-green);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .management-navigation.is-open {
+        display: flex;
+    }
+
+    .management-navigation a {
+        display: block;
+        padding: 13px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+        font-size: 13px;
+    }
+
+    .management-navigation a.active::after {
+        display: none;
+    }
+
+    /* HERO ON MOBILE */
+
+    .management-hero {
+        min-height: 510px;
+        background-position: 62% center;
+    }
+
+    .management-hero-content {
+        padding: 76px 0 84px;
+    }
+
+    .management-eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .management-hero h1 {
+        font-size: clamp(35px, 9vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .management-hero-content > p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .management-hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        max-width: 300px;
+    }
+
+    .management-btn {
+        width: 100%;
+        min-height: 47px;
+    }
+
+    /* INTRODUCTION */
+
+    .management-intro-grid,
+    .management-value-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .management-highlight {
+        padding: 32px 27px;
+    }
+
+    .management-intro h2,
+    .management-value h2 {
+        font-size: 32px;
+    }
+
+    /* SERVICE CARDS */
+
+    .management-section-heading {
+        margin-bottom: 34px;
+    }
+
+    .management-section-heading h2 {
+        font-size: 30px;
+    }
+
+    .management-services-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .management-service-card {
+        padding: 27px 24px;
+    }
+
+    /* PROCESS */
+
+    .management-process-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .management-process-step {
+        padding: 24px;
+    }
+
+    /* VALUE */
+
+    .management-value-panel {
+        padding: 34px 27px;
+    }
+
+    /* CTA */
+
+    .management-cta {
+        padding: 52px 0;
+    }
+
+    .management-cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .management-cta-inner > .management-btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* FOOTER */
+
+    .management-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 48px 0 32px;
+    }
+
+    .management-footer-bottom {
+        flex-direction: column;
+        gap: 9px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE PHONES
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    .management-container {
+        width: 90%;
+    }
+
+    .management-hero {
+        min-height: 480px;
+    }
+
+    .management-hero h1 {
+        font-size: 33px;
+    }
+
+    .management-eyebrow {
+        letter-spacing: 1.5px;
+    }
+
+    .management-intro h2,
+    .management-value h2,
+    .management-section-heading h2 {
+        font-size: 27px;
+    }
+
+    .management-service-card {
+        padding: 24px 20px;
+    }
+
+    .management-value-panel {
+        padding: 28px 22px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}/* =====================================================
+   TOP INFORMATION BAR
+===================================================== */
+
+.category-topbar {
+    position: relative;
+    z-index: 1002;
+    padding: 9px 0;
+    color: var(--category-white);
+    background: var(--category-dark-green);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.category-topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    font-size: 0.78rem;
+}
+
+.category-topbar a {
+    color: var(--category-white);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.category-topbar a:hover {
+    color: var(--category-champagne);
+}/* =========================================
+   GREAT LANSBA REALTORS
+   PROPERTY CATEGORY — TABLET & PHONE
+   Add at the bottom of property-category.css
+========================================= */
+
+/* TABLETS */
+@media screen and (max-width: 1024px) {
+
+    .category-container {
+        width: 92%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Category cards */
+    .category-grid,
+    .categories-grid,
+    .property-category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    /* Images */
+    .category-card img,
+    .categories-grid img,
+    .property-category-grid img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+    }
+
+    /* Headings */
+    .category-hero h1,
+    .category-header h1 {
+        font-size: 38px;
+    }
+
+    .category-section h2 {
+        font-size: 30px;
+    }
+
+    /* Sections */
+    .category-section {
+        padding: 55px 0;
+    }
+}
+
+
+/* PHONES */
+@media screen and (max-width: 600px) {
+
+    /* Page width */
+    .category-container {
+        width: 92%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Hero section */
+    .category-hero {
+        min-height: 280px;
+        padding: 55px 16px;
+        background-position: center;
+    }
+
+    .category-hero h1,
+    .category-header h1 {
+        font-size: 29px;
+        line-height: 1.25;
+        margin-bottom: 14px;
+    }
+
+    .category-hero p,
+    .category-header p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* One card per row on phones */
+    .category-grid,
+    .categories-grid,
+    .property-category-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    /* Category images */
+    .category-card img,
+    .categories-grid img,
+    .property-category-grid img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    /* Cards */
+    .category-card {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Section spacing */
+    .category-section {
+        padding: 38px 0;
+    }
+
+    .category-section h2 {
+        font-size: 25px;
+        line-height: 1.35;
+    }
+
+    .category-section p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* Buttons */
+    .category-section a,
+    .category-card a {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    /* Prevent horizontal scrolling */
+    .category-page,
+    main {
+        max-width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+
+/* SMALL PHONES */
+@media screen and (max-width: 380px) {
+
+    .category-hero h1,
+    .category-header h1 {
+        font-size: 25px;
+    }
+
+    .category-section h2 {
+        font-size: 22px;
+    }
+
+    .category-section {
+        padding: 30px 0;
+    }
+
+    .category-card img,
+    .categories-grid img,
+    .property-category-grid img {
+        height: 190px;
+    }
+}

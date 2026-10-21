@@ -1,0 +1,1134 @@
+
+/* =========================================================
+   GREAT LANSBA REALTORS
+   PROPERTY LISTINGS PAGE
+   Brand colours: Emerald Green, Gold and White
+   Hero image: images/listing.jpg
+   ========================================================= */
+
+/* =======================
+   1. BRAND COLOURS
+   ======================= */
+
+:root {
+    --listing-green: #013515;
+    --listing-dark-green: #023216;
+    --listing-gold: #E0A63F;
+    --listing-light-gold: #F4C561;
+    --listing-champagne: #FBDD84;
+    --listing-white: #FFFFFF;
+    --listing-light: #F4F5F4;
+    --listing-text: #26352B;
+    --listing-muted: #6B756E;
+    --listing-border: #E3E9E3;
+    --listing-shadow: 0 12px 35px rgba(1, 53, 21, 0.10);
+}
+
+/* =======================
+   2. GENERAL PAGE STYLING
+   ======================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    color: var(--listing-text);
+    background: var(--listing-white);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+body img {
+    max-width: 100%;
+}
+
+body a {
+    text-decoration: none;
+}
+
+body button,
+body input,
+body select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+body button,
+body a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   3. HEADER, LOGO AND NAVIGATION
+   Uses your existing HTML classes.
+   Navigation order:
+   Home, About, Property Listings, Property Category,
+   Property Management, Services, Contact.
+   ========================================================= */
+
+.site-header {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--listing-green);
+}
+
+/* Keep logo on the left and navigation on the right. */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    width: 90%;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 12px 0;
+    box-sizing: border-box;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    min-width: 0;
+}
+
+.logo img {
+    display: block;
+    width: 165px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Desktop navigation */
+.main-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 3px;
+}
+
+/* Navigation links */
+.main-navigation a {
+    display: inline-block;
+    padding: 10px 9px;
+    color: var(--listing-white);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.main-navigation a:hover,
+.main-navigation a.active {
+    color: var(--listing-light-gold);
+    border-bottom-color: var(--listing-gold);
+}
+
+/* Hamburger button: hidden on desktop */
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 40px;
+    padding: 0;
+    color: var(--listing-champagne);
+    background: transparent;
+    border: 1px solid var(--listing-gold);
+    border-radius: 4px;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* Medium desktop and laptop screens */
+@media (max-width: 1150px) {
+    .nav-container {
+        width: 94%;
+        gap: 12px;
+    }
+
+    .logo img {
+        width: 140px;
+    }
+
+    .main-navigation {
+        gap: 0;
+    }
+
+    .main-navigation a {
+        padding: 10px 6px;
+        font-size: 11px;
+    }
+}
+
+/* Mobile navigation.
+   JavaScript can toggle the "active" class on .main-navigation. */
+@media (max-width: 850px) {
+    .nav-container {
+        position: relative;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 90%;
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .logo img {
+        width: 145px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+
+    .main-navigation {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        order: 3;
+        width: 100%;
+        gap: 0;
+        padding: 8px 0;
+        background: var(--listing-green);
+        border-top: 1px solid rgba(244, 197, 97, 0.3);
+    }
+
+    .main-navigation.active {
+        display: flex;
+    }
+
+    .main-navigation a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 8px;
+        white-space: normal;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    }
+}
+
+/* =========================================================
+   4. PROPERTY LISTINGS HERO
+   ========================================================= */
+
+.listings-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--listing-green);
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(1, 35, 14, 0.82) 0%,
+            rgba(1, 35, 14, 0.60) 48%,
+            rgba(1, 35, 14, 0.18) 100%
+        ),
+        url("./images/listing.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.listings-hero-overlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(1, 53, 21, 0.22),
+        transparent 60%
+    );
+    pointer-events: none;
+}
+
+.listings-hero-content {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 85px 0;
+    color: var(--listing-white);
+    animation: listingsFadeIn 0.8s ease both;
+}
+
+.listings-hero-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--listing-champagne);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.listings-hero h1 {
+    max-width: 760px;
+    margin: 0 0 22px;
+    color: var(--listing-white);
+    font-size: clamp(38px, 5.5vw, 66px);
+    font-weight: 750;
+    line-height: 1.12;
+    letter-spacing: -1.3px;
+}
+
+.listings-hero p {
+    max-width: 620px;
+    margin: 0 0 32px;
+    color: rgba(255, 255, 255, 0.94);
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.listings-hero-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 27px;
+    background: var(--listing-gold);
+    color: var(--listing-green);
+    border: 2px solid var(--listing-gold);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 800;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.listings-hero-btn:hover {
+    background: transparent;
+    color: var(--listing-white);
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   5. PROPERTY SEARCH SECTION
+   ========================================================= */
+
+.property-search-section {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1150px;
+    box-sizing: border-box;
+    margin: -48px auto 75px;
+    padding: 38px;
+    background: var(--listing-white);
+    border: 1px solid var(--listing-border);
+    border-radius: 10px;
+    box-shadow: var(--listing-shadow);
+}
+
+.property-search-heading {
+    max-width: 750px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.property-search-heading > span {
+    display: block;
+    margin-bottom: 9px;
+    color: #9B6A18;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.property-search-heading h2 {
+    margin: 0 0 12px;
+    color: var(--listing-green);
+    font-size: clamp(25px, 3vw, 36px);
+    line-height: 1.3;
+}
+
+.property-search-heading p {
+    margin: 0;
+    color: var(--listing-muted);
+    font-size: 15px;
+}
+
+.property-search-form {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+    align-items: end;
+    gap: 18px;
+}
+
+.search-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.search-field label {
+    color: var(--listing-green);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.search-field select {
+    width: 100%;
+    min-height: 49px;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    color: var(--listing-text);
+    background: var(--listing-white);
+    border: 1px solid #D7DED7;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-field select:focus {
+    border-color: var(--listing-gold);
+    box-shadow: 0 0 0 3px rgba(224, 166, 63, 0.15);
+}
+
+.property-search-btn {
+    min-height: 49px;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    color: var(--listing-white);
+    background: var(--listing-green);
+    border: 2px solid var(--listing-green);
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.property-search-btn:hover {
+    background: #075325;
+    border-color: #075325;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   6. AVAILABLE PROPERTIES SECTION
+   ========================================================= */
+
+.available-properties-section {
+    padding: 30px 5% 85px;
+    background: var(--listing-light);
+}
+
+.listings-section-heading {
+    max-width: 760px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.listings-section-heading > span {
+    display: block;
+    margin-bottom: 9px;
+    color: #9B6A18;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.listings-section-heading h2 {
+    margin: 0 0 14px;
+    color: var(--listing-green);
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.3;
+}
+
+.listings-section-heading p {
+    margin: 0;
+    color: var(--listing-muted);
+    font-size: 15px;
+}
+
+.property-listings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   7. PROPERTY CARDS
+   These styles apply when property cards are added.
+   ========================================================= */
+
+.property-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--listing-white);
+    border: 1px solid var(--listing-border);
+    border-radius: 9px;
+    box-shadow: 0 5px 18px rgba(1, 53, 21, 0.05);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--listing-shadow);
+}
+
+.property-card-image {
+    position: relative;
+    height: 245px;
+    overflow: hidden;
+    background: #E5EAE5;
+}
+
+.property-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.55s ease;
+}
+
+.property-card:hover .property-card-image img {
+    transform: scale(1.06);
+}
+
+.property-status {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+    padding: 6px 12px;
+    color: var(--listing-green);
+    background: var(--listing-gold);
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.property-card-content {
+    padding: 23px;
+}
+
+.property-location {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 9px;
+    color: var(--listing-muted);
+    font-size: 12px;
+}
+
+.property-location::before {
+    content: "\2022";
+    color: #B27B20;
+    font-size: 20px;
+    line-height: 0.7;
+}
+
+.property-card-content h3 {
+    margin: 0 0 11px;
+    color: var(--listing-green);
+    font-size: 21px;
+    line-height: 1.4;
+}
+
+.property-description {
+    margin: 0 0 20px;
+    color: var(--listing-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.property-card-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 17px;
+    padding: 15px 0;
+    color: var(--listing-text);
+    border-top: 1px solid var(--listing-border);
+    border-bottom: 1px solid var(--listing-border);
+    font-size: 12px;
+}
+
+.property-card-details span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.property-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.property-price {
+    color: var(--listing-green);
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.property-price small {
+    display: block;
+    color: var(--listing-muted);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.property-details-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    color: var(--listing-green);
+    background: transparent;
+    border: 1px solid var(--listing-green);
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.property-details-btn:hover {
+    background: var(--listing-green);
+    color: var(--listing-white);
+}
+
+/* No properties / enquiry message */
+.no-properties-message {
+    grid-column: 1 / -1;
+    padding: 38px 25px;
+    text-align: center;
+    background: var(--listing-white);
+    border: 1px solid var(--listing-border);
+    border-radius: 8px;
+}
+
+.no-properties-message h3 {
+    margin: 0 0 10px;
+    color: var(--listing-green);
+    font-size: 23px;
+}
+
+.no-properties-message p {
+    max-width: 650px;
+    margin: 0 auto 20px;
+    color: var(--listing-muted);
+    font-size: 14px;
+}
+
+/* =========================================================
+   8. CALL TO ACTION
+   ========================================================= */
+
+.listings-cta {
+    padding: 75px 5%;
+    overflow: hidden;
+    background: var(--listing-green);
+    color: var(--listing-white);
+}
+
+.listings-cta-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.listings-cta-content {
+    max-width: 700px;
+}
+
+.listings-cta-content > span {
+    color: var(--listing-champagne);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.listings-cta h2 {
+    margin: 12px 0;
+    color: var(--listing-white);
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.3;
+}
+
+.listings-cta p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 15px;
+}
+
+.listings-cta-btn {
+    display: inline-flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 24px;
+    color: var(--listing-green);
+    background: var(--listing-gold);
+    border: 2px solid var(--listing-gold);
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.listings-cta-btn:hover {
+    background: transparent;
+    color: var(--listing-white);
+}
+
+/* =========================================================
+   9. FOOTER
+   ========================================================= */
+
+.site-footer {
+    padding: 60px 5% 0;
+    background: #011F0D;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 35px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-bottom: 45px;
+}
+
+.footer-column h3 {
+    margin: 0 0 18px;
+    color: var(--listing-white);
+    font-size: 16px;
+}
+
+.footer-column p {
+    margin: 0 0 12px;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.footer-logo {
+    display: inline-block;
+}
+
+.footer-logo img {
+    display: block;
+    width: 175px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 18px;
+}
+
+.footer-column ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.footer-column a {
+    color: rgba(255, 255, 255, 0.82);
+    overflow-wrap: anywhere;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--listing-light-gold);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 12px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* =========================================================
+   10. ANIMATION
+   ========================================================= */
+
+@keyframes listingsFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   11. TABLET RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 1050px) {
+    .property-search-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .property-search-btn {
+        width: 100%;
+    }
+
+    .property-listings-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================================
+   12. MOBILE RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 760px) {
+    .listings-hero {
+        min-height: 490px;
+        background-position: center;
+    }
+
+    .listings-hero-content {
+        width: 88%;
+        padding: 70px 0 90px;
+    }
+
+    .listings-hero h1 {
+        font-size: clamp(35px, 9vw, 48px);
+        letter-spacing: -0.6px;
+    }
+
+    .listings-hero p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .property-search-section {
+        width: 88%;
+        margin-top: -35px;
+        margin-bottom: 55px;
+        padding: 27px 20px;
+    }
+
+    .property-search-form {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .property-search-heading h2 {
+        font-size: 27px;
+    }
+
+    .available-properties-section {
+        padding: 25px 6% 60px;
+    }
+
+    .property-listings-grid {
+        grid-template-columns: 1fr;
+        gap: 23px;
+    }
+
+    .property-card-image {
+        height: 235px;
+    }
+
+    .listings-cta {
+        padding: 55px 6%;
+    }
+
+    .listings-cta-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .site-footer {
+        padding-top: 45px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* =========================================================
+   13. SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+    .listings-hero h1 {
+        font-size: 33px;
+    }
+
+    .listings-hero-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .property-search-section {
+        padding: 24px 15px;
+    }
+
+    .property-card-content {
+        padding: 18px;
+    }
+
+    .property-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .property-details-btn {
+        box-sizing: border-box;
+        width: 100%;
+    }
+}/* =====================================================
+   TOP INFORMATION BAR
+===================================================== */
+
+.category-topbar {
+    position: relative;
+    z-index: 1002;
+    padding: 4px 0;
+    color: var(--category-white);
+    background: #013515;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.category-topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px 12px;
+    font-size: 0.72rem;
+}
+
+.category-topbar a {
+    color: var(--category-white);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.category-topbar a:hover {
+    color: var(--category-champagne);
+}/* =========================================
+   GREAT LANSBA REALTORS
+   PROPERTY CATEGORY — TABLET & PHONE
+   Add at the bottom of property-category.css
+========================================= */
+
+/* TABLETS */
+@media screen and (max-width: 1024px) {
+
+    .category-container {
+        width: 92%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Category cards */
+    .category-grid,
+    .categories-grid,
+    .property-category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    /* Images */
+    .category-card img,
+    .categories-grid img,
+    .property-category-grid img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+    }
+
+    /* Headings */
+    .category-hero h1,
+    .category-header h1 {
+        font-size: 38px;
+    }
+
+    .category-section h2 {
+        font-size: 30px;
+    }
+
+    /* Sections */
+    .category-section {
+        padding: 55px 0;
+    }
+}
+
+
+/* PHONES */
+@media screen and (max-width: 600px) {
+
+    /* Page width */
+    .category-container {
+        width: 92%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Hero section */
+    .category-hero {
+        min-height: 280px;
+        padding: 55px 16px;
+        background-position: center;
+    }
+
+    .category-hero h1,
+    .category-header h1 {
+        font-size: 29px;
+        line-height: 1.25;
+        margin-bottom: 14px;
+    }
+
+    .category-hero p,
+    .category-header p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* One card per row on phones */
+    .category-grid,
+    .categories-grid,
+    .property-category-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    /* Category images */
+    .category-card img,
+    .categories-grid img,
+    .property-category-grid img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    /* Cards */
+    .category-card {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Section spacing */
+    .category-section {
+        padding: 38px 0;
+    }
+
+    .category-section h2 {
+        font-size: 25px;
+        line-height: 1.35;
+    }
+
+    .category-section p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* Buttons */
+    .category-section a,
+    .category-card a {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    /* Prevent horizontal scrolling */
+    .category-page,
+    main {
+        max-width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+
+/* SMALL PHONES */
+@media screen and (max-width: 380px) {
+
+    .category-hero h1,
+    .category-header h1 {
+        font-size: 25px;
+    }
+
+    .category-section h2 {
+        font-size: 22px;
+    }
+
+    .category-section {
+        padding: 30px 0;
+    }
+
+    .category-card img,
+    .categories-grid img,
+    .property-category-grid img {
+        height: 190px;
+    }
+}/* Smaller logo on Property Listing page */
+.site-header .logo {
+    width: 140px;
+}/* Smaller logo on Property Listing page */
+.site-header .logo {
+    width: 130px !important;
+}
+
+
+
+
+
+

@@ -7,13 +7,86 @@
 
     <title>Property Listings | Great Lansba Realtors</title>
 
-    <meta name="description" content="Discover properties available for sale and rent with Great Lansba Realtors in Kenya.">
+    <meta name="description"
+          content="Explore properties available for sale and rent with Great Lansba Realtors in Kenya.">
 
+    <!-- Shared website styling -->
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-    <!-- PROPERTY LISTINGS HERO SECTION -->
+    <!-- Property Listings page styling -->
+    <link rel="stylesheet" href="property-listings.css">
+</head>
+
+<body>
+    <!-- TOP INFORMATION BAR -->
+    <div class="category-topbar">
+        <div class="category-container category-topbar-inner">
+            <span>📍 Muthaiga Business Centre, Nairobi</span>
+            <span>🕒 Monday – Friday</span>
+            <a href="tel:0708326799">☎ 0708326799</a>
+            <a href="mailto:info@greatlansba.ke">✉ info@greatlansba.ke</a>
+        </div>
+    </div>
+
+    <!-- =========================
+         HEADER AND NAVIGATION
+    ========================== -->
+
+    <header class="site-header">
+
+        <div class="nav-container">
+
+            <a href="index.html"
+               class="logo"
+               aria-label="Great Lansba Realtors Home">
+
+                <img src="images/logo.jpg"
+                     alt="Great Lansba Realtors Logo">
+
+            </a>
+
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false">
+
+                ☰
+
+            </button>
+
+            <nav class="main-navigation" aria-label="Main navigation">
+
+                <a href="index.html">Home</a>
+
+                <a href="about.html">About</a>
+
+                <a href="property-listings.html" class="active">
+                    Property Listings
+                </a>
+
+                <a href="property-category.html">
+                    Property Category
+                </a>
+
+                <a href="property-management.html">
+                    Property Management
+                </a>
+
+                <a href="services.html">Services</a>
+
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         PROPERTY LISTINGS HERO
+    ========================== -->
+
     <section class="listings-hero">
 
         <div class="listings-hero-overlay"></div>
@@ -27,9 +100,9 @@
             <h1>Find Your Perfect Property</h1>
 
             <p>
-                Discover exceptional properties for sale and rent.
-                Let us help you find a place to call home or the
-                right space for your business.
+                Discover properties that match your needs, lifestyle
+                and investment goals. Whether you are looking for a
+                home, commercial space or land, we are here to help.
             </p>
 
             <a href="#available-properties" class="listings-hero-btn">
@@ -37,66 +110,670 @@
             </a>
 
         </div>
+
     </section>
-<!-- PROPERTY SEARCH SECTION -->
-<section class="property-search-section">
 
-    <div class="property-search-heading">
-        <span>YOUR NEXT PROPERTY STARTS HERE</span>
 
-        <h2>Find a Property That Fits Your Needs</h2>
+    <!-- =========================
+         PROPERTY SEARCH SECTION
+    ========================== -->
 
-        <p>
-            Search for properties by purpose, property type
-            and your preferred location.
-        </p>
+    <section class="property-search-section">
+
+        <div class="property-search-heading">
+
+            <span>YOUR NEXT PROPERTY STARTS HERE</span>
+
+            <h2>Find a Property That Fits Your Needs</h2>
+
+            <p>
+                Narrow your search by purpose, property type and location.
+            </p>
+
+        </div>
+
+        <form class="property-search-form" id="propertySearchForm">
+
+            <div class="search-field">
+
+                <label for="propertyPurpose">Looking For</label>
+
+                <select id="propertyPurpose" name="purpose">
+                    <option value="all">Buy or Rent</option>
+                    <option value="sale">Property for Sale</option>
+                    <option value="rent">Property for Rent</option>
+                </select>
+
+            </div>
+
+            <div class="search-field">
+
+                <label for="propertyType">Property Type</label>
+
+                <select id="propertyType" name="type">
+                    <option value="all">All Property Types</option>
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="land">Land</option>
+                    <option value="industrial">Industrial</option>
+                </select>
+
+            </div>
+
+            <div class="search-field">
+
+                <label for="propertyLocation">Location</label>
+
+                <select id="propertyLocation" name="location">
+                    <option value="all">All Locations</option>
+                    <option value="nairobi">Nairobi</option>
+                    <option value="kiambu">Kiambu</option>
+                    <option value="mombasa">Mombasa</option>
+                    <option value="other">Other Locations</option>
+                </select>
+
+            </div>
+
+            <button type="submit" class="property-search-btn">
+                Search Properties
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         AVAILABLE PROPERTIES
+    ========================== -->
+
+    <section class="available-properties-section"
+             id="available-properties">
+
+        <div class="listings-section-heading">
+
+            <span>EXPLORE OUR PROPERTY PORTFOLIO</span>
+
+            <h2>Properties Available for Sale and Rent</h2>
+
+            <p>
+                Browse available opportunities and contact our team
+                for further information or a viewing.
+            </p>
+
+        </div>
+
+        <div class="property-listings-grid" id="propertyListingsGrid">
+
+            <!-- Add verified available property cards here. -->
+
+            
+<!-- MIRITINI PROPERTY 1 -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="mombasa">
+
+    <div class="property-card-image">
+        <img src="images/miritini-mombasa-1.jpg"
+             alt="Miritini rental property 1"
+             loading="lazy">
+        <span class="property-status">To Let</span>
     </div>
 
-    <form class="property-search-form" id="propertySearchForm">
+    <div class="property-card-content">
+        <div class="property-location">Miritini, Mombasa</div>
+        <h3>Miritini Rental Property 1</h3>
 
-        <div class="search-field">
-            <label for="propertyPurpose">Looking For</label>
+        <p class="property-description">
+            Well-ventilated spaces, plenty of water
+            and ample parking.
+        </p>
 
-            <select id="propertyPurpose" name="purpose">
-                <option value="all">Buy or Rent</option>
-                <option value="sale">Property for Sale</option>
-                <option value="rent">Property for Rent</option>
-            </select>
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+</article>
+
+
+<!-- MIRITINI PROPERTY 2 -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="mombasa">
+
+    <div class="property-card-image">
+        <img src="images/miritini-mombasa-2.jpg"
+             alt="Miritini rental property 2"
+             loading="lazy">
+        <span class="property-status">To Let</span>
+    </div>
+
+    <div class="property-card-content">
+        <div class="property-location">Miritini, Mombasa</div>
+        <h3>Miritini Rental Property 2</h3>
+
+        <p class="property-description">
+            Well-ventilated spaces, plenty of water
+            and ample parking.
+        </p>
+
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+</article>
+
+
+<!-- MIRITINI PROPERTY 3 -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="mombasa">
+
+    <div class="property-card-image">
+        <img src="images/miritini-mombasa-3.jpg"
+             alt="Miritini rental property 3"
+             loading="lazy">
+        <span class="property-status">To Let</span>
+    </div>
+
+    <div class="property-card-content">
+        <div class="property-location">Miritini, Mombasa</div>
+        <h3>Miritini Rental Property 3</h3>
+
+        <p class="property-description">
+            Well-ventilated spaces, plenty of water
+            and ample parking.
+        </p>
+
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+</article>
+
+<!-- Cyrene Apartment -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="nairobi">
+    <div class="property-card-image">
+        <img src="images/cyrene-apartment.jpg"
+             alt="Cyrene Apartment"
+             loading="lazy">
+        <span class="property-status">To Let</span>
+    </div>
+
+    <div class="property-card-content">
+        <div class="property-location">Nairobi</div>
+        <h3>Cyrene Apartment</h3>
+        <p class="property-description">
+            Residential rental property available for enquiries.
+        </p>
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+</article>
+
+<!-- Lengai Heights -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="nairobi">
+    <div class="property-card-image">
+        <img src="images/lengai-height-kasarani.jpg"
+             alt="Lengai Heights, Kasarani"
+             loading="lazy">
+        <span class="property-status">To Let</span>
+    </div>
+
+    <div class="property-card-content">
+        <div class="property-location">Kasarani, Nairobi</div>
+        <h3>Lengai Heights</h3>
+        <p class="property-description">
+            Residential rental property in Kasarani.
+        </p>
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+</article>
+
+<!-- Kahawa West Apartment -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="nairobi">
+    <div class="property-card-image">
+        <img src="images/kahawa-west-apartment.jpg"
+             alt="Kahawa West Apartment"
+             loading="lazy">
+        <span class="property-status">To Let</span>
+    </div>
+
+    <div class="property-card-content">
+        <div class="property-location">Kahawa West, Nairobi</div>
+        <h3>Kahawa West Apartment</h3>
+        <p class="property-description">
+            Residential rental property in Kahawa West.
+        </p>
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+</article>
+
+<!-- Exceed Apartments -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="nairobi">
+    <div class="property-card-image">
+        <img src="images/exceed-1-kasarani.jpg"
+             alt="Exceed Apartments, Kasarani"
+             loading="lazy">
+        <span class="property-status">To Let</span>
+    </div>
+
+    <div class="property-card-content">
+        <div class="property-location">Kasarani, Nairobi</div>
+        <h3>Exceed Apartments</h3>
+        <p class="property-description">
+            Residential rental property in Kasarani.
+        </p>
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+</article>
+
+<!-- Shujaa Court -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="nairobi">
+    <div class="property-card-image">
+        <img src="images/shujaa-court-dohnholm.jpg"
+             alt="Shujaa Court, Donholm"
+             loading="lazy">
+        <span class="property-status">To Let</span>
+    </div>
+
+    <div class="property-card-content">
+        <div class="property-location">Donholm, Nairobi</div>
+        <h3>Shujaa Court</h3>
+        <p class="property-description">
+            Residential rental property in Donholm.
+        </p>
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+</article>
+
+<!-- Ruiru Rental Property -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="kiambu">
+    <div class="property-card-image">
+        <img src="images/ruiru.jpg"
+             alt="Ruiru Rental Property"
+             loading="lazy">
+        <span class="property-status">To Let</span>
+    </div>
+
+    <div class="property-card-content">
+        <div class="property-location">Ruiru, Kiambu County</div>
+        <h3>Ruiru Rental Property</h3>
+        <p class="property-description">
+            Residential rental property available for enquiries.
+        </p>
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+</article>
+
+<!-- Utawala Rental Property -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="nairobi">
+    <div class="property-card-image">
+        <img src="images/utawala-nairobi.jpg"
+             alt="Utawala Rental Property"
+             loading="lazy">
+        <span class="property-status">To Let</span>
+    </div>
+
+    <div class="property-card-content">
+        <div class="property-location">Utawala, Nairobi</div>
+        <h3>Utawala Rental Property</h3>
+        <p class="property-description">
+            Residential rental property available for enquiries.
+        </p>
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+</article>
+
+<!-- Kasarani Santoni Rental Property -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="nairobi">
+    <div class="property-card-image">
+        <img src="images/kasarani-santoni.jpg"
+             alt="Kasarani Santoni Rental Property"
+             loading="lazy">
+        <span class="property-status">To Let</span>
+    </div>
+
+    <div class="property-card-content">
+        <div class="property-location">Kasarani Santoni, Nairobi</div>
+        <h3>Kasarani Santoni Rental Property</h3>
+        <p class="property-description">
+            Residential rental property available for enquiries.
+        </p>
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+</article>
+
+<!-- Kailu Square - Kiambu County -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="kiambu">
+
+    <div class="property-card-image">
+        <img src="images/kailu-square.jpg"
+             alt="Kailu Square"
+             loading="lazy">
+        <span class="property-status">To Let</span>
+    </div>
+
+    <div class="property-card-content">
+        <div class="property-location">Kiambu County</div>
+        <h3>Kailu Square</h3>
+        <p class="property-description">
+            Property available for enquiries. Contact Great Lansba Realtors for further details.
+        </p>
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+
+</article>
+<!-- Kamenu Thika Rental Property -->
+<article class="property-card"
+         data-purpose="rent"
+         data-type="residential"
+         data-location="kiambu">
+    <div class="property-card-image">
+        <img src="images/kamenu-thika-1-2-bedroom-kiambu-county.jpg"
+             alt="Kamenu Thika 1 and 2 Bedroom Rental Property"
+             loading="lazy">
+        <span class="property-status">To Let</span>
+    </div>
+
+    <div class="property-card-content">
+        <div class="property-location">Kamenu, Thika, Kiambu County</div>
+        <h3>Kamenu Thika Apartments</h3>
+        <p class="property-description">
+            1 and 2 bedroom apartments available for enquiries.
+        </p>
+        <a href="contact.html" class="property-details-btn">
+            Enquire Now &rarr;
+        </a>
+    </div>
+</article>
+
         </div>
 
-        <div class="search-field">
-            <label for="propertyType">Property Type</label>
+    </section>
 
-            <select id="propertyType" name="type">
-                <option value="all">All Property Types</option>
-                <option value="residential">Residential</option>
-                <option value="commercial">Commercial</option>
-                <option value="land">Land</option>
-                <option value="industrial">Industrial</option>
-            </select>
+
+    <!-- =========================
+         CALL TO ACTION
+    ========================== -->
+
+    <section class="listings-cta">
+
+        <div class="listings-cta-container">
+
+            <div class="listings-cta-content">
+
+                <span>LET US HELP YOU FIND THE RIGHT PROPERTY</span>
+
+                <h2>Your Next Property Journey Starts Here</h2>
+
+                <p>
+                    Speak to Great Lansba Realtors for assistance
+                    with property sales, rentals and real estate enquiries.
+                </p>
+
+            </div>
+
+            <a href="contact.html" class="listings-cta-btn">
+                Contact Our Team &rarr;
+            </a>
+
         </div>
 
-        <div class="search-field">
-            <label for="propertyLocation">Location</label>
+    </section>
 
-            <select id="propertyLocation" name="location">
-                <option value="all">All Locations</option>
-                <option value="nairobi">Nairobi</option>
-                <option value="kiambu">Kiambu</option>
-                <option value="mombasa">Mombasa</option>
-                <option value="other">Other Locations</option>
-            </select>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-column">
+
+                <a href="index.html" class="footer-logo">
+
+                    <img src="images/logo.jpg"
+                         alt="Great Lansba Realtors Logo">
+
+                </a>
+
+                <p>
+                    Great Lansba Realtors provides real estate services
+                    and property management solutions to support property
+                    owners, buyers, tenants and investors.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="property-listings.html">Property Listings</a></li>
+                    <li><a href="property-category.html">Property Category</a></li>
+                    <li><a href="property-management.html">Property Management</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact Us</h3>
+
+                <p>
+                    Muthaiga Business Centre<br>
+                    Nairobi, Kenya
+                </p>
+
+                <p>
+                    <a href="tel:0708326799">0708 326 799</a><br>
+                    <a href="tel:0757462419">0757 462 419</a>
+                </p>
+
+                <p>
+                    <a href="mailto:info@greatlansba.ke">
+                        info@greatlansba.ke
+                    </a><br>
+
+                    <a href="mailto:sales@greatlansba.ke">
+                        sales@greatlansba.ke
+                    </a>
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Connect With Us</h3>
+
+                <p>
+                    Contact our team for property enquiries,
+                    management support and real estate services.
+                </p>
+
+                <p>
+                    <a href="https://wa.me/254708326799"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        WhatsApp Us
+                    </a>
+                </p>
+
+            </div>
+
         </div>
 
-        <button type="submit" class="property-search-btn">
-            Search Properties
-        </button>
 
-    </form>
+        <div class="footer-bottom">
 
-</section>
+            <p>
+                &copy; <span id="copyrightYear">2026</span>
+                Great Lansba Realtors. All rights reserved.
+            </p>
 
+            <p>Real Estate Services &amp; Property Management</p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Shared website JavaScript -->
     <script src="script.js"></script>
+
+
+    <!-- Property Listings page interactions -->
+    <script>
+
+        // Update the copyright year automatically.
+        document.getElementById("copyrightYear").textContent =
+            new Date().getFullYear();
+
+
+        // Filter property cards when available listings are added.
+        const propertySearchForm =
+            document.getElementById("propertySearchForm");
+
+        propertySearchForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const purpose =
+                document.getElementById("propertyPurpose").value;
+
+            const type =
+                document.getElementById("propertyType").value;
+
+            const location =
+                document.getElementById("propertyLocation").value;
+
+            const propertyCards =
+                document.querySelectorAll(".property-card");
+
+            let visibleCount = 0;
+
+            propertyCards.forEach(function (card) {
+
+                const matchesPurpose =
+                    purpose === "all" ||
+                    card.dataset.purpose === purpose;
+
+                const matchesType =
+                    type === "all" ||
+                    card.dataset.type === type;
+
+                const matchesLocation =
+                    location === "all" ||
+                    card.dataset.location === location;
+
+                const matches =
+                    matchesPurpose &&
+                    matchesType &&
+                    matchesLocation;
+
+                card.style.display = matches ? "" : "none";
+
+                if (matches) {
+                    visibleCount++;
+                }
+
+            });
+
+
+            const message =
+                document.getElementById("noPropertiesMessage");
+
+            if (propertyCards.length === 0) {
+
+                message.style.display = "block";
+
+                message.querySelector("h3").textContent =
+                    "No Listings Added Yet";
+
+                message.querySelector("p").textContent =
+                    "Please contact our team to enquire about currently available properties.";
+
+            } else if (visibleCount === 0) {
+
+                message.style.display = "block";
+
+                message.querySelector("h3").textContent =
+                    "No Matching Properties Found";
+
+                message.querySelector("p").textContent =
+                    "Try changing your search filters or contact our team for assistance.";
+
+            } else {
+
+                message.style.display = "none";
+
+            }
+
+
+            document.getElementById("available-properties")
+                .scrollIntoView({ behavior: "smooth" });
+
+        });
+
+    </script>
 
 </body>
 </html>
